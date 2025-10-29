@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:latest # Or a specific version like mysql:8
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: your_root_password # Replace with a strong password
+      MYSQL_DATABASE: your_database_name # Optional: to create a database on startup
+      MYSQL_USER: your_username # Optional: to create a user with access to MYSQL_DATABASE
+      MYSQL_PASSWORD: your_user_password # Optional: password for MYSQL_USER
+    ports:
+      - "3306:3306" # Maps host port 3306 to container port 3306
+    volumes:
+      - mysql-data:/var/lib/mysql # Persistent storage for MySQL data
+
+volumes:
+  mysql-data: # Defines a named volume for data persistence
