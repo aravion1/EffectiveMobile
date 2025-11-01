@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * @OA\Schema(
- *     title="CreateOrUpdateRequest",
+ *     schema="CreateOrUpdateRequest",
  *     description="Модель данных для создания или обновления задач",
  *     type="object",
  *     @OA\Property (property="title", type="string", example="string"),

@@ -27,7 +27,7 @@ class TaskController extends Controller
      *     path="/api/v1/tasks",
      *     operationId="create_task",
      *     summary="Создание задачи",
-     *     tags={"Task},
+     *     tags={"Task"},
      *     @OA\RequestBody(
      *          @OA\JsonContent(ref="#/components/schemas/CreateOrUpdateRequest")
      *      ),
@@ -56,13 +56,13 @@ class TaskController extends Controller
      * @OA\Get (
      *     path="/api/v1/tasks",
      *     operationId="get_tasks",
-     *     summary="Получить все задачи,
-     *     tags={"Task},
+     *     summary="Получить все задачи",
+     *     tags={"Task"},
      *     @OA\Response (
      *         response=200,
      *         description="OK",
      *         @OA\JsonContent (
-     *               @OA\Property (property="data", type="array", @OA\Items(ref="#/components/schemas/CreateOrUpdateRequest")),
+     *               @OA\Property (property="data", type="array", @OA\Items(ref="#/components/schemas/TaskResource")),
      *               @OA\Property (property="total", type="integer", example="0")
      *         )
      *     ),

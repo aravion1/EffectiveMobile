@@ -21,11 +21,6 @@ return [
                 'use_absolute_path' => env('L5_SWAGGER_USE_ABSOLUTE_PATH', true),
 
                 /*
-                * Edit to set path where swagger ui assets should be stored
-                */
-                'swagger_ui_assets_path' => env('L5_SWAGGER_UI_ASSETS_PATH', 'vendor/swagger-api/swagger-ui/dist/'),
-
-                /*
                  * File name of the generated json documentation file
                  */
                 'docs_json' => 'api-docs.json',
@@ -94,6 +89,11 @@ return [
             'base' => env('L5_SWAGGER_BASE_PATH', null),
 
             /*
+             * Edit to set path where swagger ui assets should be stored
+            */
+            'swagger_ui_assets_path' => env('L5_SWAGGER_UI_ASSETS_PATH', 'vendor/swagger-api/swagger-ui/dist/'),
+
+            /*
              * Absolute path to directories that should be excluded from scanning
              * @deprecated Please use `scanOptions.exclude`
              * `scanOptions.exclude` overwrites this
@@ -102,24 +102,6 @@ return [
         ],
 
         'scanOptions' => [
-            /**
-             * Configuration for default processors. Allows to pass processors configuration to swagger-php.
-             *
-             * @link https://zircote.github.io/swagger-php/reference/processors.html
-             */
-            'default_processors_configuration' => [
-            /** Example */
-            /**
-             * 'operationId.hash' => true,
-             * 'pathFilter' => [
-             * 'tags' => [
-             * '/pets/',
-             * '/store/',
-             * ],
-             * ],.
-             */
-            ],
-
             /**
              * analyser: defaults to \OpenApi\StaticAnalyser .
              *
@@ -274,7 +256,6 @@ return [
          */
         'ui' => [
             'display' => [
-                'dark_mode' => env('L5_SWAGGER_UI_DARK_MODE', false),
                 /*
                  * Controls the default expansion setting for the operations and tags. It can be :
                  * 'list' (expands only the tags),
